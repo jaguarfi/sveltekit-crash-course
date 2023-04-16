@@ -1,11 +1,15 @@
 <script lang="ts">
-  import type { PageData } from '../../guides/$types';
+  /** @type {import('./$types').PageData} */
+  export let data;
 
-  export let data: PageData;
+  console.log(data);
 </script>
 
 <div class="guides">
   <ul>
+    {#each data.guides as guide}
+      <li><a href="/">{guide.title}</a></li>
+    {/each}
     <li><a href="/">Guide 1</a></li>
     <li><a href="/">Guide 2</a></li>
   </ul>
