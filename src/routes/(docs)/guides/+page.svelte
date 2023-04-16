@@ -8,10 +8,8 @@
 <div class="guides">
   <ul>
     {#each data.guides as guide}
-      <li><a href="/">{guide.title}</a></li>
+      <li><a href={`/guides/${guide.id}`}>{guide.title}</a></li>
     {/each}
-    <li><a href="/">Guide 1</a></li>
-    <li><a href="/">Guide 2</a></li>
   </ul>
 </div>
 
