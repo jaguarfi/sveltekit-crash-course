@@ -6,10 +6,10 @@ export async function load({ fetch, params }) {
   const guide = await response.json();
   console.log(response.ok);
 
-  if (response.ok) {
-    console.log(guide);
-
-    return guide;
+  if (!response.ok) {
+    throw error(404, {
+      message: 'Not found'
+  });
   }
-  return error(404, 'Not found');
+    return guide;
 }
